@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container my-5 d-flex justify-content-center">
+<h1 class="mt-2 text-center">Modifica Progetto</h1>
+<div class="container my-2 d-flex justify-content-center">
     @if ($errors->any())
     <div class="alert alert-danger">
-        <h4>correggi i seguenti errori</h4>
+        <h4>Correggi i seguenti errori</h4>
         <ul>
             @foreach ($errors->all() as $error)
             <li>{{$error}}</li>
@@ -12,7 +13,7 @@
         </ul>
     </div>
     @endif
-    <form action="{{route('admin.projects.update', $project)}}" method="POST" class="row g-3 d-flex">
+    <form action="{{route('admin.projects.update', $project)}}" method="POST" class="row">
         @csrf
         @method('PUT')
         <div class="col-4">
@@ -42,8 +43,8 @@
             </div>
             @enderror
         </div>
-        <button class="btn btn-success">Salva</button>
-        <a class="btn btn-primary my-2" href="{{route('admin.projects.index')}}">Torna alla home page</a>
+        <button class="btn btn-success my-2">Salva</button>
+        <a class="btn btn-primary" href="{{route('admin.projects.index')}}">Torna alla home page</a>
     </form>
 </div>
 @endsection
