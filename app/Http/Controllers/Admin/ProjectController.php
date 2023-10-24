@@ -74,6 +74,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+
+        // $project = Project::findOrFail($id) -> metodo usabile quando non usiamo la dependecy injection
+
         return view("admin.projects.edit", compact("project"));
     }
 

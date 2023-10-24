@@ -14,6 +14,10 @@ class UpdateProjectRequest extends FormRequest
     public function authorize()
     {
         return true;
+
+        // I file Request non vanno spostati nella cartella Auth
+        // possiamo usare la funzione Auth::check(); che ritorna un booleano
+        // se utente loggato o meno
     }
 
     /**
