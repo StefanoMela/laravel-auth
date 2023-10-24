@@ -19,7 +19,7 @@ use App\Http\Controllers\Guest\PageController as GuestPageController;
 */
 
 Route::get('/', [GuestPageController::class, 'index'])->name('guest.home');
-
+Route::get('/all', [GuestPageController::class, 'show_all'])->name('guest.all');
 
 Route::middleware(['auth', 'verified'])
   ->prefix('admin')

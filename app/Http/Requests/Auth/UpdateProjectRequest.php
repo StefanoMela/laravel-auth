@@ -29,6 +29,9 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'title'=>'required|string',
+            // 'title'=>['required|string|unique:project, id,' . $this->project->id],
+            // ciò fa si che al momento della modifica, se non si cambia il titolo, la validazione
+            // non blocchi con errore "il titolo è già esistente"
             'description'=>'required|string',
             'url'=>'required|string',
         ];

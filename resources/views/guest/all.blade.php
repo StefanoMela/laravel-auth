@@ -3,7 +3,7 @@
 @section('content')
 <section class="container mt-5">
   <h1>{{ $title }}</h1>
-  <h5>Fai log in per vedere tutti i progetti</h5>
+  <h5>Fai log in per modificare i progetti</h5>
 
   <section class="container my-5">
     <h1 class="text-center">{{ $title }}</h1>
@@ -18,4 +18,5 @@
     </div>
     @endforeach
   </section>
+  {{$projects->links('pagination::bootstrap-5')}}
 @endsection
