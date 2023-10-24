@@ -20,7 +20,7 @@ class ProjectController extends Controller
     public function index()
     {
         $title = "Laravel Boolfolio - Base";
-        $projects = Project::paginate(15);
+        $projects = Project::orderby('id','desc')->paginate(15); // paginazione con ordine discdente in base all' ID
         return view("admin.projects.index", compact("title","projects"));
     }
 
